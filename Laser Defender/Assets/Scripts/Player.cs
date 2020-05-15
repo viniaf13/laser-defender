@@ -8,9 +8,10 @@ public class Player : MonoBehaviour
     //Config params
     [SerializeField] [Range(5f,30f)] float moveSpeed = 15f;
     [SerializeField] float padding = 0.6f;
-    [SerializeField] GameObject laserPrefab;
     [SerializeField] float laserSpeed = 10f;
 
+    private GameObject[] laserPool = default;
+    private int laserIndex = 0;
     Vector3 camMin;
     Vector3 camMax;
 
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         SetupMoveBoundaries();
+        laserPool = FindObjectOfType<LaserPool>().GetLaserPool();
     }
 
     // Update is called once per frame
@@ -31,11 +33,33 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity); //Quartenion.identity uses the prefab rotation
-            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, laserSpeed);
-            Destroy(laser, 5f);
+            StartCoroutine(FireContinuosly());
         }
     }
+
+    private IEnumerator FireContinuosly()
+    {
+        float projectileFiringPeriod = 0.1f;
+        WaitForSeconds fireDelay = new WaitForSeconds(projectileFiringPeriod);
+
+        while (Input.GetButton("Fire1"))
+        {
+            GameObject laser = laserPool[laserIndex];
+            laser.transform.position = transform.position;
+            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, laserSpeed);
+            
+            //Restart the index
+            laserIndex++;
+            if (laserIndex >= laserPool.Length)
+            {
+                laserIndex = 0;
+            }
+
+            yield return fireDelay;
+        }
+    }
+
+    
 
     private void Move()
     {
@@ -54,4 +78,7 @@ public class Player : MonoBehaviour
         camMin = gameCamera.ViewportToWorldPoint(new Vector3(0f, 0f, 0f));
         camMax = gameCamera.ViewportToWorldPoint(new Vector3(1f, 1f, 0f));
     }
+
+
+
 }
