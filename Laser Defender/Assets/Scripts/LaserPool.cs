@@ -18,7 +18,7 @@ public class LaserPool : MonoBehaviour
         lasers = new GameObject[laserPoolSize];
         for (int i = 0; i < laserPoolSize; i++)
         {
-            lasers[i] = Instantiate(laserPrefab, objectPoolPos, Quaternion.identity);
+            lasers[i] = Instantiate(laserPrefab, objectPoolPos, Quaternion.identity) as GameObject;
         }
 
     }
