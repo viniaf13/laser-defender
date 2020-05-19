@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         SetupMoveBoundaries();
-        laserPool = FindObjectOfType<LaserPool>().GetLaserPool();
+        laserPool = FindObjectOfType<LaserPool>().GetPlayerLaserPool();
     }
 
     // Update is called once per frame

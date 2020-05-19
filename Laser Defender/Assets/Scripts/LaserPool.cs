@@ -7,25 +7,26 @@ public class LaserPool : MonoBehaviour
 {
     //Config params
     [SerializeField] int laserPoolSize = 15;
-    [SerializeField] GameObject laserPrefab = default;
+    [SerializeField] GameObject playerLaserPrefab = default;
     [SerializeField] Vector2 objectPoolPos = new Vector2(0f, -10f);
 
-    private GameObject[] lasers;
+    private GameObject[] playerLasers;
 
     void Awake()
     {
         //Spawn lasers outside camera
-        lasers = new GameObject[laserPoolSize];
+        playerLasers = new GameObject[laserPoolSize];
+ 
         for (int i = 0; i < laserPoolSize; i++)
         {
-            lasers[i] = Instantiate(laserPrefab, objectPoolPos, Quaternion.identity) as GameObject;
+            playerLasers[i] = Instantiate(playerLaserPrefab, objectPoolPos, Quaternion.identity) as GameObject;
         }
 
     }
 
     //Get access to the laser pool
-    public GameObject[] GetLaserPool()
+    public GameObject[] GetPlayerLaserPool()
     {
-        return lasers;
+        return playerLasers;
     }
 }

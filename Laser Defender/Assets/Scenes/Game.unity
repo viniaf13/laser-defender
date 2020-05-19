@@ -411,6 +411,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser Pool
       objectReference: {fileID: 0}
+    - target: {fileID: 7565979730410928934, guid: a603a22a2dc4fce44bd9b7a29ad46fd5,
+        type: 3}
+      propertyPath: playerLaserPrefab
+      value: 
+      objectReference: {fileID: 6997848519986584601, guid: f9b5eb282c075f846b1ee84d7da90c12,
+        type: 3}
+    - target: {fileID: 7565979730410928934, guid: a603a22a2dc4fce44bd9b7a29ad46fd5,
+        type: 3}
+      propertyPath: enemyLaserPrefab
+      value: 
+      objectReference: {fileID: 6997848519986584601, guid: c1208760bcf2333448116d81eb259484,
+        type: 3}
+    - target: {fileID: 7565979730410928934, guid: a603a22a2dc4fce44bd9b7a29ad46fd5,
+        type: 3}
+      propertyPath: laserPoolSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7565979730410928935, guid: a603a22a2dc4fce44bd9b7a29ad46fd5,
         type: 3}
       propertyPath: m_LocalPosition.x
