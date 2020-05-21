@@ -15,6 +15,14 @@ public class Player : MonoBehaviour
     [SerializeField] float laserSpeed = 10f;
     [SerializeField] float firingPeriod = 0.1f;
 
+    [Header("Player Effects")]
+    [SerializeField] AudioClip laserSFX = default;
+    [Range(0, 1)][SerializeField] float laserVolume = 0.3f;
+    [SerializeField] AudioClip deathSFX = default;
+    [Range(0, 1)] [SerializeField] float deathVolume = 1f;
+    [SerializeField] GameObject deathVFX = default;
+    [SerializeField] float explosionDuration = 0.5f;
+
     private GameObject[] laserPool = default;
     private int laserIndex = 0;
     Vector3 camMin;
@@ -50,7 +58,9 @@ public class Player : MonoBehaviour
             GameObject laser = laserPool[laserIndex];
             laser.transform.position = transform.position;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, laserSpeed);
-            
+            AudioSource.PlayClipAtPoint(laserSFX, Camera.main.transform.position, laserVolume);
+
+
             //Restart the index
             laserIndex++;
             if (laserIndex >= laserPool.Length)
@@ -67,16 +77,25 @@ public class Player : MonoBehaviour
     {
         DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
         if (!damageDealer) { return; }
-        handleHit(damageDealer);
+        HandleHit(damageDealer);
     }
-    private void handleHit(DamageDealer damageDealer)
+    private void HandleHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathVolume);
+        GameObject explosion = Instantiate(
+            deathVFX, transform.position, Quaternion.identity) as GameObject;
+        Destroy(explosion, explosionDuration);
     }
 
     //Handle player movement

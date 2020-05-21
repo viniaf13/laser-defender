@@ -100,6 +100,12 @@ MonoBehaviour:
   padding: 0.6
   laserSpeed: 15
   firingPeriod: 0.1
+  laserSFX: {fileID: 8300000, guid: be71fa5a6976dfa43ba3b218008139c8, type: 3}
+  laserVolume: 0.05
+  deathSFX: {fileID: 8300000, guid: 9e7d29a17eccbd9499d61f1f8514a696, type: 3}
+  deathVolume: 1
+  deathVFX: {fileID: 476564073016512365, guid: 80f51042f4730e843ac3f46f667e22d1, type: 3}
+  explosionDuration: 0.5
 --- !u!58 &1476427166742046424
 CircleCollider2D:
   m_ObjectHideFlags: 0
