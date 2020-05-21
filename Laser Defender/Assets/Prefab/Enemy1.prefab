@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5360440242055313836}
   - component: {fileID: -8134542776367109247}
   - component: {fileID: 5705632637938920966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,12 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdb49c1d4412484abd5286532eb9833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  shotCounter: 0
-  minShotTime: 0.2
-  maxShotTime: 0.8
+  health: 200
   enemyLaserPrefab: {fileID: 6997848519986584601, guid: c1208760bcf2333448116d81eb259484,
     type: 3}
+  minShotTime: 0.2
+  maxShotTime: 0.8
   laserSpeed: -10
 --- !u!58 &5705632637938920966
 CircleCollider2D:

@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy Stats")]
     [SerializeField] float health = 100f;
-    [SerializeField] float shotCounter = default;
+    [SerializeField] GameObject enemyLaserPrefab = default;
+
+    [Header("Enemy Projectile")]
     [SerializeField] float minShotTime = 0.2f;
     [SerializeField] float maxShotTime = 0.8f;
-    [SerializeField] GameObject enemyLaserPrefab = default;
     [SerializeField] float laserSpeed = -10f;
+
+    private float shotCounter = default;
 
     // Start is called before the first frame update
     void Start()
@@ -41,12 +45,14 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
+        if (!damageDealer) { return; }
         handleHit(damageDealer);
     }
 
     private void handleHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
+        damageDealer.PlayerHit();
         if (health <= 0)
         {
             Destroy(gameObject);

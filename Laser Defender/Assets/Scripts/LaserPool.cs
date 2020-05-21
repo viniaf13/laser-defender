@@ -29,4 +29,9 @@ public class LaserPool : MonoBehaviour
     {
         return playerLasers;
     }
+
+    public Vector2 GetPoolPosition()
+    {
+        return objectPoolPos;
+    }
 }
