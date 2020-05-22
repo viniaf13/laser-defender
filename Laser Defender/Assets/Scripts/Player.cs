@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     [Range(0, 1)] [SerializeField] float deathVolume = 1f;
     [SerializeField] GameObject deathVFX = default;
     [SerializeField] float explosionDuration = 0.5f;
-    [SerializeField] float deathDelay = 3f;
 
     private GameObject[] laserPool = default;
     private int laserIndex = 0;
@@ -87,19 +86,14 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            StartCoroutine(Teste());
+            
 
         }
     }
 
-    private IEnumerator Teste()
-    {
-        WaitForSeconds delay = new WaitForSeconds(deathDelay);
-        yield return delay;
-        FindObjectOfType<Level>().LoadScene("Game Over");
-    }
     private void Die()
     {
+        FindObjectOfType<Level>().LoadGameOver();
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathVolume);
         GameObject explosion = Instantiate(
