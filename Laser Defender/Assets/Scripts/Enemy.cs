@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Stats")]
     [SerializeField] float health = 100f;
     [SerializeField] GameObject enemyLaserPrefab = default;
+    [SerializeField] int scoreValue = 100;
 
     [Header("Enemy Projectile")]
     [SerializeField] float minShotTime = 0.2f;
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<GameSession>().AddScore(scoreValue);
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathVolume);
         GameObject explosion = Instantiate(
