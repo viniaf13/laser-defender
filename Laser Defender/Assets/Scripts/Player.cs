@@ -24,11 +24,13 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject deathVFX = default;
     [SerializeField] float explosionDuration = 0.5f;
 
+    //Cached reference
     private GameObject[] laserPool = default;
-    private int laserIndex = 0;
     private HealthBar healthBar = default;
-    Vector3 camMin;
-    Vector3 camMax;
+
+    private int laserIndex = 0;
+    private Vector3 camMin;
+    private Vector3 camMax;
 
 
     void Start()
