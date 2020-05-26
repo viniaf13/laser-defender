@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
                 enemyLaserPrefab, transform.position, Quaternion.identity) as GameObject;
             enemyLaser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, laserSpeed);
             AudioSource.PlayClipAtPoint(laserSFX, Camera.main.transform.position, laserVolume);
-            Destroy(enemyLaser, 2f);
+            Destroy(enemyLaser, 15f);
 
             shotCounter = Random.Range(minShotTime, maxShotTime);
         }

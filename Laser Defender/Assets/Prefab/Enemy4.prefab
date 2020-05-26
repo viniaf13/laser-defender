@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5360440242204898825}
   - component: {fileID: 5360440242055313836}
   - component: {fileID: -8134542776367109247}
-  - component: {fileID: 5705632637938920966}
   - component: {fileID: 1837978181269943896}
   - component: {fileID: 8573240125765864878}
+  - component: {fileID: 6211865914744035301}
   m_Layer: 9
-  m_Name: Enemy2
+  m_Name: Enemy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5360440242204898824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.81, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9768343, y: 1.9790283, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f1b6e7d51a0e9c4bb24a80f91e48904, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85e9ea7795aa00c40ae8f404568a511f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,35 +110,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdb49c1d4412484abd5286532eb9833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
-  enemyLaserPrefab: {fileID: 6997848519986584601, guid: c1208760bcf2333448116d81eb259484,
+  health: 1000
+  enemyLaserPrefab: {fileID: 6997848519986584601, guid: 2d75b88c1758aaa4f90c2996b96de9c1,
     type: 3}
   scoreValue: 100
-  minShotTime: 2
-  maxShotTime: 4
-  laserSpeed: -10
+  minShotTime: 1
+  maxShotTime: 2
+  laserSpeed: -5
   laserSFX: {fileID: 8300000, guid: 0352645e569ff0041a72f8b41e5524d9, type: 3}
   laserVolume: 0.05
   deathSFX: {fileID: 8300000, guid: 2cdf603fb906b28469866d3b334f6217, type: 3}
   deathVolume: 0.5
-  deathVFX: {fileID: 476564073016512365, guid: 1efe1b2016edf3341a91325b715022bc, type: 3}
+  deathVFX: {fileID: 476564073016512365, guid: 518bbe75bde8f7044ac65155326a5373, type: 3}
   explosionDuration: 0.5
---- !u!58 &5705632637938920966
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5360440242204898824}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.04847318}
-  serializedVersion: 2
-  m_Radius: 0.41652685
 --- !u!114 &1837978181269943896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893ad1d569fc94b4fb7e6bcb17d4341b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 400
+  damage: 600
 --- !u!50 &8573240125765864878
 Rigidbody2D:
   serializedVersion: 4
@@ -173,3 +157,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &6211865914744035301
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5360440242204898824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009043753, y: 0.02710116}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.97, y: 0.84}
+    newSize: {x: 0.93, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8072132, y: 0.7857977}
+  m_EdgeRadius: 0

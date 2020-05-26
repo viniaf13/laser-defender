@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f4d3469f4b21bae40b8288007353355d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f4b79afe2d8a4d48ba02d29d307c572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,11 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdb49c1d4412484abd5286532eb9833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 400
   enemyLaserPrefab: {fileID: 6997848519986584601, guid: c1208760bcf2333448116d81eb259484,
     type: 3}
-  minShotTime: 0.2
-  maxShotTime: 0.8
+  scoreValue: 100
+  minShotTime: 0.5
+  maxShotTime: 1
   laserSpeed: -10
   laserSFX: {fileID: 8300000, guid: 0352645e569ff0041a72f8b41e5524d9, type: 3}
   laserVolume: 0.05

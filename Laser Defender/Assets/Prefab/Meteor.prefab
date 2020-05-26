@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1837978181269943896}
   - component: {fileID: 8573240125765864878}
   m_Layer: 9
-  m_Name: Enemy2
+  m_Name: Enemy5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f1b6e7d51a0e9c4bb24a80f91e48904, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb0a9755f784c79488ed02794fd51104, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,14 +114,14 @@ MonoBehaviour:
   enemyLaserPrefab: {fileID: 6997848519986584601, guid: c1208760bcf2333448116d81eb259484,
     type: 3}
   scoreValue: 100
-  minShotTime: 2
-  maxShotTime: 4
+  minShotTime: 0.2
+  maxShotTime: 0.8
   laserSpeed: -10
   laserSFX: {fileID: 8300000, guid: 0352645e569ff0041a72f8b41e5524d9, type: 3}
   laserVolume: 0.05
   deathSFX: {fileID: 8300000, guid: 2cdf603fb906b28469866d3b334f6217, type: 3}
   deathVolume: 0.5
-  deathVFX: {fileID: 476564073016512365, guid: 1efe1b2016edf3341a91325b715022bc, type: 3}
+  deathVFX: {fileID: 476564073016512365, guid: 3d5e732449700a24b9e526d7cb44e14f, type: 3}
   explosionDuration: 0.5
 --- !u!58 &5705632637938920966
 CircleCollider2D:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893ad1d569fc94b4fb7e6bcb17d4341b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 400
+  damage: 200
 --- !u!50 &8573240125765864878
 Rigidbody2D:
   serializedVersion: 4
