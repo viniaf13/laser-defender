@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     //Config params
     [Header("Player Stats")]
-    [SerializeField] float health = 500f;
+    [SerializeField] int health = 500;
     [SerializeField] [Range(5f,30f)] float moveSpeed = 15f;
     [SerializeField] float padding = 0.6f;
 
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
 
     private GameObject[] laserPool = default;
     private int laserIndex = 0;
+    private HealthBar healthBar = default;
     Vector3 camMin;
     Vector3 camMax;
 
@@ -33,6 +35,7 @@ public class Player : MonoBehaviour
     {
         SetupMoveBoundaries();
         laserPool = FindObjectOfType<LaserPool>().GetPlayerLaserPool();
+        healthBar = FindObjectOfType<HealthBar>();
     }
 
     void Update()
@@ -82,6 +85,10 @@ public class Player : MonoBehaviour
     private void HandleHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealth(health);
+        }
         damageDealer.Hit();
         if (health <= 0)
         {
@@ -99,6 +106,11 @@ public class Player : MonoBehaviour
         GameObject explosion = Instantiate(
             deathVFX, transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, explosionDuration);
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
     //Handle player movement
