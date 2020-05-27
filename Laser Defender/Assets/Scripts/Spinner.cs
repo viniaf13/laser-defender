@@ -7,6 +7,6 @@ public class Spinner : MonoBehaviour
     [SerializeField] float spinSpeed = 360f;
     void Update()
     {
-        transform.Rotate(0f, 0f, spinSpeed);
+        transform.Rotate(0f, 0f, spinSpeed * Time.deltaTime);
     }
 }

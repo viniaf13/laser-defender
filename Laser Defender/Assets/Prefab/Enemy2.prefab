@@ -113,7 +113,7 @@ MonoBehaviour:
   health: 200
   enemyLaserPrefab: {fileID: 6997848519986584601, guid: c1208760bcf2333448116d81eb259484,
     type: 3}
-  scoreValue: 100
+  scoreValue: 250
   minShotTime: 2
   maxShotTime: 4
   laserSpeed: -10

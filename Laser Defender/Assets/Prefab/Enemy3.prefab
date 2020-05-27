@@ -111,12 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 400
-  enemyLaserPrefab: {fileID: 6997848519986584601, guid: c1208760bcf2333448116d81eb259484,
+  enemyLaserPrefab: {fileID: 6997848519986584601, guid: 10c00d84e9e2b274daef420f123454dd,
     type: 3}
-  scoreValue: 100
-  minShotTime: 0.2
-  maxShotTime: 0.5
-  laserSpeed: -3
+  scoreValue: 340
+  minShotTime: 0.5
+  maxShotTime: 1
+  laserSpeed: -1
   laserSFX: {fileID: 8300000, guid: 0352645e569ff0041a72f8b41e5524d9, type: 3}
   laserVolume: 0.05
   deathSFX: {fileID: 8300000, guid: 2cdf603fb906b28469866d3b334f6217, type: 3}

@@ -110,13 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdb49c1d4412484abd5286532eb9833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 800
   enemyLaserPrefab: {fileID: 6997848519986584601, guid: 2d75b88c1758aaa4f90c2996b96de9c1,
     type: 3}
-  scoreValue: 100
+  scoreValue: 660
   minShotTime: 1
   maxShotTime: 2
-  laserSpeed: -5
+  laserSpeed: -3
   laserSFX: {fileID: 8300000, guid: 0352645e569ff0041a72f8b41e5524d9, type: 3}
   laserVolume: 0.05
   deathSFX: {fileID: 8300000, guid: 2cdf603fb906b28469866d3b334f6217, type: 3}
