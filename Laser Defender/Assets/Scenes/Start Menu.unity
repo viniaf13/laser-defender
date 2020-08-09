@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space Shooter
+  m_text: Pilot bill
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 71bd9ca77be6a744fbbaa655a019212f, type: 2}
   m_sharedMaterial: {fileID: -2808316974494542473, guid: 71bd9ca77be6a744fbbaa655a019212f,
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_margin: {x: -149.14355, y: 0, z: 0, w: 139.98419}
   m_textInfo:
     textComponent: {fileID: 342697174}
-    characterCount: 13
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
